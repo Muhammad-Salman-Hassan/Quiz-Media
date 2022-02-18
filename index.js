@@ -18,7 +18,18 @@ form.addEventListener('submit', (e)=>{
             score+=25
         }
     })
-    scoretag.innerHTML=`Your Score : ${score}%`
+    
+
+    let output=0;
+    let timer=setInterval(()=>{
+        scoretag.innerHTML=`Your Score : ${output}%`
+        if(output===score){
+            clearInterval(timer)
+        }else{
+            output++
+        }
+    },10)
+
 
     window.scrollTo(0,0)
 })
